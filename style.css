@@ -1,0 +1,1013 @@
+/* =========================================================
+   EXPLORE AFGHANISTAN
+   Main Stylesheet
+   ========================================================= */
+
+/* =========================================================
+   1. RESET & GLOBAL STYLES
+   ========================================================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  background-color: #f8f7f2;
+  color: #222222;
+  line-height: 1.7;
+}
+
+/* =========================================================
+   2. COLOR VARIABLES
+   ========================================================= */
+
+:root {
+  --deep-green: #1f4d3a;
+  --warm-sand: #d8b36a;
+  --off-white: #f8f7f2;
+  --dark-charcoal: #222222;
+  --white: #ffffff;
+
+  --shadow-light: 0 10px 30px rgba(0, 0, 0, 0.08);
+  --shadow-medium: 0 15px 40px rgba(0, 0, 0, 0.14);
+
+  --transition: all 0.3s ease;
+}
+
+/* =========================================================
+   3. GENERAL ELEMENTS
+   ========================================================= */
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+button,
+input,
+textarea {
+  font-family: inherit;
+}
+
+::selection {
+  background-color: var(--warm-sand);
+  color: var(--dark-charcoal);
+}
+
+/* =========================================================
+   4. NAVIGATION BAR
+   ========================================================= */
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.navbar {
+  width: 100%;
+  min-height: 80px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 7%;
+
+  background-color: rgba(31, 77, 58, 0.96);
+  backdrop-filter: blur(10px);
+
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* Logo */
+
+.logo a {
+  color: var(--white);
+
+  font-family: "Poppins", sans-serif;
+  font-size: 1.35rem;
+  font-weight: 700;
+
+  letter-spacing: 0.3px;
+
+  transition: var(--transition);
+}
+
+.logo a:hover {
+  color: var(--warm-sand);
+}
+
+/* Navigation links */
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 35px;
+}
+
+.nav-links a {
+  position: relative;
+
+  color: var(--white);
+
+  font-size: 0.95rem;
+  font-weight: 600;
+
+  transition: var(--transition);
+}
+
+/* Underline animation */
+
+.nav-links a::after {
+  content: "";
+
+  position: absolute;
+  left: 0;
+  bottom: -7px;
+
+  width: 0;
+  height: 2px;
+
+  background-color: var(--warm-sand);
+
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: var(--warm-sand);
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* =========================================================
+   5. HERO SECTION
+   ========================================================= */
+
+.hero {
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.55)),
+    url("images/hero.jpg");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Hero content */
+
+.hero-content {
+  width: 800px;
+  max-width: 90%;
+
+  text-align: center;
+  color: var(--white);
+
+  margin-top: 60px;
+
+  animation: heroFadeIn 1.2s ease forwards;
+}
+
+.hero-content h1 {
+  font-family: "Poppins", sans-serif;
+
+  font-size: 4.5rem;
+  font-weight: 700;
+
+  line-height: 1.15;
+
+  margin-bottom: 20px;
+
+  text-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+}
+
+.hero-content p {
+  max-width: 680px;
+
+  margin: 0 auto 35px;
+
+  font-size: 1.15rem;
+  line-height: 1.8;
+
+  color: rgba(255, 255, 255, 0.92);
+}
+
+/* Hero button */
+
+.hero-button {
+  display: inline-block;
+
+  padding: 14px 32px;
+
+  background-color: var(--warm-sand);
+  color: var(--dark-charcoal);
+
+  border-radius: 5px;
+
+  font-weight: 700;
+
+  transition:
+    transform 0.3s ease,
+    background-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.hero-button:hover {
+  background-color: var(--white);
+
+  transform: translateY(-4px);
+
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+}
+
+/* =========================================================
+   6. GENERAL SECTION STYLES
+   ========================================================= */
+
+.section {
+  padding: 100px 7%;
+}
+
+/* Section heading */
+
+.section-heading {
+  max-width: 750px;
+
+  margin: 0 auto 55px;
+
+  text-align: center;
+}
+
+.section-heading h2 {
+  position: relative;
+
+  display: inline-block;
+
+  font-family: "Poppins", sans-serif;
+
+  color: var(--deep-green);
+
+  font-size: 2.5rem;
+  font-weight: 700;
+
+  margin-bottom: 18px;
+}
+
+/* Small gold line below heading */
+
+.section-heading h2::after {
+  content: "";
+
+  position: absolute;
+
+  left: 50%;
+  bottom: -10px;
+
+  transform: translateX(-50%);
+
+  width: 55px;
+  height: 3px;
+
+  background-color: var(--warm-sand);
+
+  border-radius: 5px;
+}
+
+.section-heading p {
+  color: #555555;
+
+  font-size: 1rem;
+
+  line-height: 1.8;
+}
+
+/* =========================================================
+   7. DESTINATIONS SECTION
+   ========================================================= */
+
+.destinations {
+  background-color: var(--off-white);
+}
+
+.destination-container {
+  max-width: 1200px;
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 28px;
+}
+
+/* Destination card */
+
+.destination-card {
+  position: relative;
+
+  height: 560px;
+
+  overflow: hidden;
+
+  border-radius: 14px;
+
+  background-color: var(--deep-green);
+
+  box-shadow: var(--shadow-light);
+
+  transition:
+    transform 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+.destination-card:hover {
+  transform: translateY(-10px);
+
+  box-shadow: var(--shadow-medium);
+}
+
+/* Destination image */
+
+.destination-card img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  transition:
+    transform 0.7s ease,
+    filter 0.5s ease;
+}
+
+/* Zoom image when card is hovered */
+
+.destination-card:hover img {
+  transform: scale(1.08);
+
+  filter: brightness(0.85);
+}
+
+/* Dark gradient over image */
+
+.destination-card::after {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.88) 0%,
+    rgba(0, 0, 0, 0.55) 35%,
+    rgba(0, 0, 0, 0.05) 75%
+  );
+
+  pointer-events: none;
+}
+
+/* Destination text */
+
+.destination-content {
+  position: absolute;
+
+  left: 0;
+  bottom: 0;
+
+  width: 100%;
+
+  z-index: 2;
+
+  padding: 30px;
+  color: var(--white);
+}
+
+.destination-content h3 {
+  font-family: "Poppins", sans-serif;
+
+  font-size: 2rem;
+
+  margin-bottom: 10px;
+}
+
+.destination-content p {
+  font-size: 0.95rem;
+
+  line-height: 1.7;
+
+  color: rgba(255, 255, 255, 0.88);
+
+  margin-bottom: 20px;
+}
+
+/* Destination button */
+
+.destination-button {
+  display: inline-block;
+
+  padding: 10px 20px;
+
+  border: 1px solid var(--warm-sand);
+
+  border-radius: 4px;
+
+  color: var(--warm-sand);
+
+  font-size: 0.9rem;
+  font-weight: 700;
+
+  transition: var(--transition);
+}
+
+.destination-button:hover {
+  background-color: var(--warm-sand);
+
+  color: var(--dark-charcoal);
+
+  transform: translateY(-2px);
+}
+
+/* =========================================================
+   8. ABOUT SECTION
+   ========================================================= */
+
+.about {
+  max-width: 1300px;
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  align-items: center;
+
+  gap: 70px;
+}
+
+/* About image */
+
+.about-image {
+  overflow: hidden;
+
+  border-radius: 14px;
+
+  box-shadow: var(--shadow-medium);
+}
+
+.about-image img {
+  width: 100%;
+  height: 500px;
+
+  object-fit: cover;
+
+  transition: transform 0.6s ease;
+}
+
+.about-image:hover img {
+  transform: scale(1.04);
+}
+
+/* About content */
+
+.about-content h2 {
+  position: relative;
+
+  display: inline-block;
+
+  font-family: "Poppins", sans-serif;
+
+  color: var(--deep-green);
+
+  font-size: 2.5rem;
+
+  margin-bottom: 30px;
+}
+
+.about-content h2::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  bottom: -10px;
+
+  width: 55px;
+  height: 3px;
+
+  background-color: var(--warm-sand);
+}
+
+.about-content p {
+  color: #555555;
+
+  font-size: 1rem;
+
+  line-height: 1.9;
+
+  margin-bottom: 20px;
+}
+
+/* =========================================================
+   9. WHY VISIT SECTION
+   ========================================================= */
+
+.why-visit {
+  background-color: #f0efe9;
+}
+
+.features-container {
+  max-width: 1100px;
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 28px;
+}
+
+/* Feature card */
+
+.feature-card {
+  padding: 40px 30px;
+
+  text-align: center;
+
+  background-color: var(--white);
+
+  border-radius: 12px;
+
+  box-shadow: var(--shadow-light);
+
+  border-bottom: 3px solid transparent;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-8px);
+
+  box-shadow: var(--shadow-medium);
+
+  border-bottom-color: var(--warm-sand);
+}
+
+/* Feature icon */
+
+.feature-icon {
+  width: 70px;
+  height: 70px;
+
+  margin: 0 auto 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: rgba(216, 179, 106, 0.18);
+
+  border-radius: 50%;
+
+  font-size: 2rem;
+
+  transition: transform 0.3s ease;
+}
+
+.feature-card:hover .feature-icon {
+  transform: scale(1.1) rotate(3deg);
+}
+
+.feature-card h3 {
+  font-family: "Poppins", sans-serif;
+
+  color: var(--deep-green);
+
+  font-size: 1.35rem;
+
+  margin-bottom: 15px;
+}
+
+.feature-card p {
+  color: #666666;
+
+  font-size: 0.95rem;
+
+  line-height: 1.8;
+}
+
+/* =========================================================
+   10. CONTACT SECTION
+   ========================================================= */
+
+.contact {
+  background-color: var(--off-white);
+}
+
+/* Contact form */
+
+.contact-form {
+  max-width: 750px;
+
+  margin: 0 auto;
+
+  padding: 45px;
+
+  background-color: var(--white);
+
+  border-radius: 12px;
+
+  box-shadow: var(--shadow-light);
+}
+
+/* Form group */
+
+.form-group {
+  margin-bottom: 22px;
+}
+
+.form-group label {
+  display: block;
+
+  margin-bottom: 8px;
+
+  color: var(--deep-green);
+
+  font-weight: 700;
+
+  font-size: 0.95rem;
+}
+
+/* Input and textarea */
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+
+  padding: 13px 15px;
+
+  border: 1px solid #dddddd;
+
+  border-radius: 5px;
+
+  outline: none;
+
+  background-color: #fcfcfa;
+
+  color: var(--dark-charcoal);
+
+  font-size: 0.95rem;
+
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease,
+    background-color 0.3s ease;
+}
+
+.form-group input {
+  height: 50px;
+}
+
+.form-group textarea {
+  resize: vertical;
+
+  min-height: 150px;
+}
+
+/* Input focus */
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: var(--deep-green);
+
+  background-color: var(--white);
+
+  box-shadow: 0 0 0 3px rgba(31, 77, 58, 0.1);
+}
+
+/* Placeholder */
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #999999;
+}
+
+/* Submit button */
+
+.contact-form button {
+  width: 100%;
+
+  padding: 14px;
+
+  border: none;
+
+  border-radius: 5px;
+
+  background-color: var(--deep-green);
+
+  color: var(--white);
+
+  font-size: 1rem;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.3s ease,
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.contact-form button:hover {
+  background-color: #163a2c;
+
+  transform: translateY(-3px);
+
+  box-shadow: 0 8px 20px rgba(31, 77, 58, 0.25);
+}
+
+.contact-form button:active {
+  transform: translateY(0);
+}
+
+/* =========================================================
+   11. FOOTER
+   ========================================================= */
+
+.footer {
+  background-color: var(--deep-green);
+
+  color: var(--white);
+
+  padding: 55px 7% 25px;
+}
+
+/* Footer main area */
+
+.footer-content {
+  max-width: 1200px;
+
+  margin: 0 auto 35px;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  gap: 40px;
+}
+
+/* Footer brand */
+
+.footer-brand h3 {
+  font-family: "Poppins", sans-serif;
+
+  font-size: 1.4rem;
+
+  margin-bottom: 8px;
+}
+
+.footer-brand p {
+  max-width: 400px;
+
+  color: rgba(255, 255, 255, 0.75);
+
+  font-size: 0.9rem;
+}
+
+/* Footer links */
+
+.footer-links {
+  display: flex;
+
+  gap: 25px;
+
+  flex-wrap: wrap;
+}
+
+.footer-links a {
+  color: rgba(255, 255, 255, 0.85);
+
+  font-size: 0.9rem;
+
+  transition: var(--transition);
+}
+
+.footer-links a:hover {
+  color: var(--warm-sand);
+}
+
+/* Footer bottom */
+
+.footer-bottom {
+  max-width: 1200px;
+
+  margin: 0 auto;
+
+  padding-top: 20px;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+
+  text-align: center;
+}
+
+.footer-bottom p {
+  color: rgba(255, 255, 255, 0.65);
+
+  font-size: 0.8rem;
+}
+
+/* =========================================================
+   12. ACCESSIBILITY / FOCUS
+   ========================================================= */
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid var(--warm-sand);
+
+  outline-offset: 3px;
+}
+
+/* =========================================================
+   13. ANIMATIONS
+   ========================================================= */
+
+@keyframes heroFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================================================
+   14. RESPONSIVE DESIGN
+   ========================================================= */
+
+@media (max-width: 1000px) {
+  .navbar {
+    padding: 0 4%;
+  }
+
+  .nav-links {
+    gap: 20px;
+  }
+
+  .hero-content h1 {
+    font-size: 3.8rem;
+  }
+
+  .destination-container {
+    gap: 20px;
+  }
+
+  .destination-card {
+    height: 500px;
+  }
+
+  .about {
+    gap: 40px;
+  }
+}
+
+/* Tablet */
+
+@media (max-width: 800px) {
+  .navbar {
+    flex-direction: column;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    padding: 15px 4%;
+  }
+
+  .nav-links {
+    gap: 18px;
+  }
+
+  .hero-content h1 {
+    font-size: 3.2rem;
+  }
+
+  .destination-container {
+    grid-template-columns: 1fr;
+    max-width: 550px;
+  }
+
+  .destination-card {
+    height: 550px;
+  }
+
+  .about {
+    grid-template-columns: 1fr;
+
+    max-width: 750px;
+  }
+
+  .about-image img {
+    height: 450px;
+  }
+
+  .features-container {
+    grid-template-columns: 1fr;
+
+    max-width: 550px;
+  }
+
+  .footer-content {
+    flex-direction: column;
+
+    align-items: flex-start;
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+  .section {
+    padding: 75px 5%;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+
+    justify-content: center;
+
+    gap: 12px 18px;
+  }
+
+  .nav-links a {
+    font-size: 0.85rem;
+  }
+
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+  }
+
+  .section-heading h2 {
+    font-size: 2rem;
+  }
+
+  .destination-card {
+    height: 500px;
+  }
+
+  .destination-content {
+    padding: 25px;
+  }
+
+  .destination-content h3 {
+    font-size: 1.7rem;
+  }
+
+  .contact-form {
+    padding: 30px 20px;
+  }
+}
